@@ -1,0 +1,7 @@
+[run]
+branch = True
+source = numpydoc
+omit =
+    */setup.py
+    numpydoc/tests/*
+    numpydoc/templates/*
