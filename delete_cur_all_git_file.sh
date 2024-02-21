@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# 删除当前目录下所有git文件，防止重复添加其他仓库的git文件 
+# 添加非本仓库的git文件，可能导致git无法上传文件
+##
 
 # 列出所有包含 .git 的文件夹
 git_folders=$(find .  -name ".git*")
