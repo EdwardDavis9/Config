@@ -49,6 +49,10 @@ noremap sb :set splitbelow<CR>:split<CR>
 
 noremap tt :NERDTreeToggle<CR>
 
+nnoremap <F7> :e $MYVIMRC<CR>
+nnoremap <F8> :e ~/.emacs.d/init.el<CR>
+nnoremap <F9> :source $MYVIMRC<CR>
+
 " compile funcion
 noremap r :call CompileRunGcc()<CR>
 func! CompileRunGcc()
@@ -64,6 +68,11 @@ func! CompileRunGcc()
 		:sp
 		:res -5
 		:term ./%<
+    elseif &filetype == 'sh'
+		set splitbelow
+		:sp
+		:res -5
+		term bash % 
 	elseif &filetype == 'cs'
 		set splitbelow
 		silent! exec "!mcs %"
